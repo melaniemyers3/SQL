@@ -93,14 +93,21 @@
 
 [View on DB Fiddle](https://www.db-fiddle.com/f/PvBAaQwEUSWAxZCsg4Vmx/0);
 
-SELECT item_name
-FROM superstore
-ORDER BY price;
 
-SELECT MAX(price)
+ #For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices.
+
+#Use a SELECT statement to order the items by price. 
+SELECT item_name, price
+FROM superstore
+ORDER BY price desc;
+
+
+#Show a statistic about the item prices. 
+SELECT avg(price)
 FROM superstore;
 
-SELECT 'Kitchen Supplies'
+#Show a statistic about the price for items in the category of "Kitchen Supplies".
+SELECT avg(price)
 FROM superstore 
-ORDER BY price desc; 
+ORDER BY category="Kitchen Supplies" 
 
